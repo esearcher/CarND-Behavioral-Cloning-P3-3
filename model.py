@@ -6,7 +6,7 @@ from keras.models import Sequential
 from keras.layers import Flatten, Dense, Lambda, Conv2D, Cropping2D
 from keras.layers.pooling import MaxPooling2D
 
-data_dirs = ['../data1', '../data2', '../data3', '../data4', '../data5', '../data6']
+data_dirs = ['../data1', '../data2', '../data3', '../data4', '../data5', '../data6', '../data7', '../data8']
 lines = []
 images = []
 measurements = []
