@@ -3,7 +3,7 @@ import matplotlib.image as mpimg
 import numpy as np
 
 from keras.models import Sequential
-from keras.layers import Flatten, Dense, Lambda, Conv2D, Cropping2D
+from keras.layers import Flatten, Dense, Lambda, Conv2D, Cropping2D, Dropout
 from keras.layers.pooling import MaxPooling2D
 
 data_dirs = ['../data1', '../data2', '../data3', '../data4', '../data5', '../data6', '../data7', '../data8', '../data9', '../data10']
@@ -46,9 +46,13 @@ model.add(Conv2D(64, (3, 3), activation='relu', strides=(1,1), border_mode='vali
 model.add(Conv2D(64, (3, 3), activation='relu', strides=(1,1), border_mode='valid'))
 model.add(Flatten())
 model.add(Dense(1164, activation='relu'))
+model.add(Dropout(0.3))
 model.add(Dense(100, activation='relu'))
+model.add(Dropout(0.3))
 model.add(Dense(50, activation='relu'))
+model.add(Dropout(0.3))
 model.add(Dense(10, activation='relu'))
+model.add(Dropout(0.3))
 model.add(Dense(1, activation='tanh'))
 
 model.compile(loss='mse', optimizer='adam')
